@@ -1,6 +1,6 @@
 module.exports = {
     presets: [
-      // Your presets configuration
+      "@babel/preset-env", "@babel/preset-react"
     ],
     plugins: [
       "@babel/plugin-proposal-private-property-in-object"
