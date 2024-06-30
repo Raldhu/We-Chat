@@ -21,7 +21,7 @@ import io from 'socket.io-client'
 import Lottie from 'react-lottie'
 import animationData from '../animation/Animation - 1719740862629.json'
 
-const ENDPOINT="http://localhost:5000"
+const ENDPOINT="https://we-chat-tdyc.onrender.com/"
 var socket,selectedChatCompare
 
 function SingleChat({ fetchAgain, setFetchAgain }) {
