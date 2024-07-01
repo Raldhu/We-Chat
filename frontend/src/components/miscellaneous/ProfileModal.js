@@ -15,18 +15,14 @@ import {
   Text as ChakraText
 } from "@chakra-ui/react";
 
-function ProfileModal({ user, children }) {
+function ProfileModal({ user, children, icon }) {
   const { isOpen, onOpen, onClose } = useDisclosure();
   return (
     <>
       {children ? (
         <span onClick={onOpen}>{children}</span>
       ) : (
-        <IconButton
-          display={{ base: "flex" }}
-          icon={<FaRegEye />}
-          onClick={onOpen}
-        />
+        <span onClick={onOpen}>{icon}</span>
       )}
       <Modal size="lg" isOpen={isOpen} onClose={onClose} isCentered>
         <ModalOverlay />

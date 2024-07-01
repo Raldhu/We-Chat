@@ -9,6 +9,7 @@ import {
   Toast,
   useToast,
 } from "@chakra-ui/react";
+import { FaRegEye } from "react-icons/fa";
 import { IoArrowBackCircle } from "react-icons/io5";
 import { getSender, getSenderFull } from "../config/ChatLogics";
 import ProfileModal from "./miscellaneous/ProfileModal";
@@ -175,7 +176,9 @@ function SingleChat({ fetchAgain, setFetchAgain }) {
             {!selectedChat.isGroupChat ? (
               <>
                 {getSender(user, selectedChat.users)}
-                <ProfileModal user={getSenderFull(user, selectedChat.users)} />
+                <ProfileModal user={getSenderFull(user, selectedChat.users)} icon={<FaRegEye
+                size="23px"
+                cursor="pointer"/> } />
               </>
             ) : (
               <>

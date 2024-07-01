@@ -8,11 +8,10 @@ import {
   isLastMessage
 } from "../config/ChatLogics";
 import { ChatState } from "../context/ChatProvider";
-import ProfileModal from "./miscellaneous/ProfileModal";
+import ProfilePictureModal from "./miscellaneous/ProfilePictureModal"
 import { Avatar, Tooltip, useDisclosure } from "@chakra-ui/react";
 
 function ScrollableChat({ messages }) {
-  const { isOpen, onOpen, onClose } = useDisclosure();
   const { user } = ChatState();
 
   return (
@@ -23,13 +22,18 @@ function ScrollableChat({ messages }) {
             {(
               isFirstMessage(messages, i, user._id)) && (
               <Tooltip label={m.sender.name} placement="bottom-start" hasArrow>
-                <Avatar
-                  mt="7px"
-                  mr={1}
-                  size="sm"
-                  cursor="pointer"
-                  name={m.sender.name}
-                  src={m.sender.pic}
+                <ProfilePictureModal
+                  user={m.sender}
+                  icon={
+                    <Avatar
+                      mt="7px"
+                      mr={1}
+                      size="sm"
+                      cursor="pointer"
+                      name={m.sender.name}
+                      src={m.sender.pic}
+                    />
+                  }
                 />
               </Tooltip>
             )}
